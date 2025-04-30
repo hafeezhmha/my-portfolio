@@ -9,7 +9,8 @@
   padding-top: 20px;
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(2, minmax(150px, 10px));
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 10px 20px;
 }
 
 .about-description li {
@@ -17,6 +18,8 @@
   padding-left: 20px;
   font-size: 18px;
   color: var(--slate);
+  white-space: nowrap;
+  line-height: 1.7;
 }
 
 .about-description li::before {
@@ -34,10 +37,10 @@
 .about-description {
   font-family: "NTR", sans-serif;
   color: var(--slate);
-  max-width: 600px;
+  max-width: 800px;
+  margin: 0 auto;
   font-size: 22px;
   text-align: justify;
-  margin: 0;
 }
 
 .about-description a,
@@ -72,14 +75,13 @@
 @media only screen and (max-width: 600px) {
   #about {
     height: unset;
-    padding-left: unset;
-    padding-right: unset;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 30%;
   }
 
   .about-description {
     font-size: 18px;
-    text-align: justify;
   }
 
   .about-description a,

@@ -19,27 +19,32 @@ class About extends React.Component {
   render() {
     const one = (
       <p>
-        I am currently a <b>Software Development Engineer</b> at
-        <a href="https://www.aboutamazon.com/"> Amazon</a>, working in the AWS
-        sector under team Route 53. At the same time, I am undertaking a
-        part-time <b> Master's of Science</b> in <b>Software Engineering </b>at{" "}
-        <a href="https://www.ox.ac.uk/about">University of Oxford</a>.
+        I am a <b>Machine Learning Engineer</b> focused on bringing{" "}
+        <a href="#">AI systems & Full Stack Applications</a> to life. I specialize in 
+        Computer Vision, Machine Learning, and Generative AI, working to make neural 
+        networks more intelligent and practical.
       </p>
     );
     const two = (
       <p>
-        Outside of work, I'm interested in following the developments of
-        science. I also play a lot of video games. And make TikToks.
+        What drives me is taking complex AI concepts and turning them into tangible solutions. 
+        My background in geospatial tech has given me a unique perspective on how different 
+        technologies can come together to create impactful solutions. You'll find me deep in 
+        PyTorch code, experimenting with vision transformers, or architecting full-stack 
+        applications that put AI to work.
       </p>
     );
 
     const tech_stack = [
-      "Typescript",
+      "PyTorch",
+      "Computer Vision",
+      "Neural Networks",
+      "Machine Learning",
+      "Full-Stack Development",
       "Python",
-      "React.js",
-      "Java",
-      "Javascript ES6+",
-      "C#"
+      "Generative AI",
+      "Docker",
+      "ComfyUI"
     ];
 
     return (
@@ -51,7 +56,8 @@ class About extends React.Component {
           <div className="about-content">
             <div className="about-description">
               {[one]}
-              {"Here are some technologies I have been working with:"}
+              {[two]}
+              {"Here are some technologies I specialize in:"}
               <ul className="tech-stack">
                 {tech_stack.map(function (tech_item, i) {
                   return (
@@ -61,10 +67,6 @@ class About extends React.Component {
                   );
                 })}
               </ul>
-              {[two]}
-            </div>
-            <div className="about-image">
-              <img alt="Gazi Jarin" src={"/assets/me2.jpg"} />
             </div>
           </div>
         </FadeInSection>

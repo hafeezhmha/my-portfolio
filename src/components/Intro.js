@@ -3,9 +3,8 @@ import React from "react";
 import "../styles/Intro.css";
 import Typist from "react-typist";
 import "react-typist/dist/Typist.css";
-import EmailRoundedIcon from "@material-ui/icons/EmailRounded";
 import FadeInSection from "./FadeInSection";
-import FractalTree from "./FractalTree";
+import NeuralViz from "./NeuralViz";
 
 class Intro extends React.Component {
   constructor() {
@@ -25,28 +24,34 @@ class Intro extends React.Component {
   render() {
     return (
       <div id="intro">
-        <FractalTree></FractalTree>
+        <NeuralViz></NeuralViz>
         <Typist avgTypingDelay={120}>
           <span className="intro-title">
             {"hi, "}
-            <span className="intro-name">{"gazi"}</span>
+            <span className="intro-name">{"hafeez"}</span>
             {" here."}
           </span>
         </Typist>
         <FadeInSection>
-          <div className="intro-subtitle">I create stuff sometimes.</div>
-          <div className="intro-desc">
-            I'm a software engineer from Toronto, Canada. I'm fascinated by
-            large-scale, high-impact products and contributed to major feature launches in
-            industry-leading services as well as apps that have 100M+ installs.
+          <div className="intro-subtitle">
+            <span className="code-element">{"<"}</span>
+            <span className="code-word">create</span>
+            <span className="code-element">{"/>"}</span>
+            <span className="code-element">{"<"}</span>
+            <span className="code-word">code</span>
+            <span className="code-element">{"/>"}</span>
+            <span className="code-element">{"<"}</span>
+            <span className="code-word">innovate</span>
+            <span className="code-element">{"/>"}</span>
           </div>
-          <a
-            href="mailto:gazijarin@gmail.com"
-            className="intro-contact"
-          >
-            <EmailRoundedIcon></EmailRoundedIcon>
-            {" Say hi!"}
-          </a>
+          <div className="intro-desc">
+            I'm a machine learning engineer focused on bringing AI systems to life. 
+            I specialize in computer vision and neural networks, creating intelligent 
+            solutions through innovative design.
+          </div>
+          <div className="intro-tagline">
+            the machine - it's learning!
+          </div>
         </FadeInSection>
       </div>
     );

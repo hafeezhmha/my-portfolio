@@ -12,3 +12,84 @@
   font-size: 16px;
   padding-bottom: 40px;
 }
+
+.neural-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.neural-nodes {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.node {
+  height: 8px;
+  width: 8px;
+  background-color: var(--green-bright);
+  border-radius: 50%;
+  margin: 0 6px;
+  opacity: 0.7;
+  animation: pulse 3s infinite;
+}
+
+.node:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.node:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.node:nth-child(3) {
+  animation-delay: 2s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+.footer-tagline {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: var(--lightest-slate);
+  font-size: 15px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: var(--slate);
+  margin: 0 10px;
+  transition: all 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--green-bright);
+  transform: translateY(-3px);
+}
+
+.copyright {
+  font-size: 14px;
+  color: var(--slate);
+  opacity: 0.8;
+}
