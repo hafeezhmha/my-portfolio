@@ -27,7 +27,7 @@ class Projects extends React.Component {
         techStack: "Python, Ollama, LangChain, BeautifulSoup, Windows Optimization",
         link: "https://github.com/hafeezhmha/Automated-AI-Web-Researcher-Ollama",
         open: "#",
-        image: process.env.PUBLIC_URL + "/assets/automated-researcher.png"
+        image: "/assets/automated-researcher.png"
       },
       "Aura": {
         desc:
@@ -35,7 +35,7 @@ class Projects extends React.Component {
         techStack: "Python, NLP, Machine Learning, Streamlit",
         link: "https://github.com/hafeezhmha/Aura",
         open: "https://aura-transliterate.streamlit.app/",
-        image: process.env.PUBLIC_URL + "/assets/aura-demo.png"
+        image: "/assets/aura-demo.png"
       },
       "Gradient Descent Visualization": {
         desc:
@@ -43,7 +43,7 @@ class Projects extends React.Component {
         techStack: "Python, Streamlit, Mathematical Visualization, Interactive Plotting",
         link: "#",
         open: "https://gradient-descent-visual.streamlit.app/",
-        image: process.env.PUBLIC_URL + "/assets/gradient-descent-demo.png"
+        image: "/assets/gradient-descent-demo.png"
       }
     };
 
@@ -61,11 +61,11 @@ class Projects extends React.Component {
                 src={projects[key].image}
                 alt={key}
               />
-              <Carousel.Caption>
+                <Carousel.Caption>
                 <h3>{key}</h3>
                 <p>{projects[key].desc}</p>
                 <p className="techStack">{projects[key].techStack}</p>
-              </Carousel.Caption>
+                </Carousel.Caption>
             </Carousel.Item>
           ))}
         </Carousel>
@@ -100,4 +100,4 @@ class Projects extends React.Component {
   }
 }
 
-export default Projects; 
+export default Projects;
