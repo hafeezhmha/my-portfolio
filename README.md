@@ -2,10 +2,10 @@
   <img src="https://img.icons8.com/color/48/000000/magritte.png"/>
 </p>
 <h1 align="center">
-  gazijarin.com - v1
+  Hafeez Portfolio - v2
 </h1>
 <p align="center">
-  The first iteration of <a href="https://gazijarin.com" target="_blank">gazijarin.com</a> built with React.js leveraging Material UI.
+  The second iteration of my personal portfolio website built with React.js leveraging Material UI.
 </p>
 
 <img width="1306" alt="Screen Shot 2021-03-15 at 8 29 18 PM" src="https://user-images.githubusercontent.com/32211479/111238274-24f8b100-85cd-11eb-9d5a-00f07cbc05e9.png">
@@ -45,3 +45,4 @@
 | Lightest Slate | ![#ccd6f6](https://via.placeholder.com/10/ccd6f6?text=+) `#ccd6f6` |
 | White          | ![#e6f1ff](https://via.placeholder.com/10/e6f1ff?text=+) `#e6f1ff` |
 | Green          | ![#64ffda](https://via.placeholder.com/10/64ffda?text=+) `#64ffda` |
+| Lavender       | ![#e6e6fa](https://via.placeholder.com/10/e6e6fa?text=+) `#e6e6fa` |

@@ -20,7 +20,7 @@ class About extends React.Component {
     const one = (
       <p>
         I am a <b>Machine Learning Engineer</b> focused on bringing{" "}
-        <a href="#">AI systems & Full Stack Applications</a> to life. I specialize in 
+        <button className="text-link">AI systems & Full Stack Applications</button> to life. I specialize in 
         Computer Vision, Machine Learning, and Generative AI, working to make neural 
         networks more intelligent and practical.
       </p>
@@ -36,15 +36,30 @@ class About extends React.Component {
     );
 
     const tech_stack = [
-      "PyTorch",
-      "Computer Vision",
-      "Neural Networks",
-      "Machine Learning",
-      "Full-Stack Development",
       "Python",
-      "Generative AI",
+      "PyTorch",
+      "Computer Vision Models",
+      "Large Language Models (LLMs)",
+      "Version Control (Git)",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Tailwindcss",
+      "Anaconda",
+      "Groq",
+      "Langchain",
+      "Streamlit , Gradio",
+      "NumPy",
+      "Pandas",
+      "Diffusion Models (Flux, Wan 2.1)",
+      "OCR",
+      "QGIS",
       "Docker",
-      "ComfyUI"
+      "ComfyUI",
+      "Replicate & Cog",
+      "AWS Lamdbda/S3",
+      "Lovable AI",
+      "Hugging Face"
     ];
 
     return (
@@ -61,7 +76,7 @@ class About extends React.Component {
               <ul className="tech-stack">
                 {tech_stack.map(function (tech_item, i) {
                   return (
-                    <FadeInSection delay={`${i + 1}00ms`}>
+                    <FadeInSection delay={`${i + 1}00ms`} key={i}>
                       <li>{tech_item}</li>
                     </FadeInSection>
                   );

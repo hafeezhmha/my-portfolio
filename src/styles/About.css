@@ -49,6 +49,23 @@
   font-weight: bold;
 }
 
+.text-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 21px;
+  font-weight: bold;
+  color: var(--green-bright);
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+  color: var(--green-bright);
+}
+
 .about-image {
   padding-left: 40px;
 }

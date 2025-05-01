@@ -8,4 +8,20 @@
   opacity: 0.4;
   pointer-events: none;
   background: transparent;
+  overflow: hidden; /* Prevent any scrollbars */
+}
+
+/* Additional responsiveness for mobile */
+@media screen and (max-width: 768px) {
+  #neural-viz {
+    opacity: 0.3; /* Slightly more transparent on mobile */
+    height: 100%; /* Use % instead of vh for better mobile compatibility */
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  #neural-viz {
+    opacity: 0.25; /* Even more transparent for very small screens */
+  }
 } 

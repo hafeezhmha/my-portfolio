@@ -25,13 +25,13 @@ class Intro extends React.Component {
     return (
       <div id="intro">
         <NeuralViz></NeuralViz>
-        <Typist avgTypingDelay={120}>
-          <span className="intro-title">
-            {"hi, "}
-            <span className="intro-name">{"hafeez"}</span>
-            {" here."}
-          </span>
-        </Typist>
+        <div className="typist-wrapper">
+          <Typist avgTypingDelay={120} cursor={{ hideWhenDone: false, hideWhenDoneDelay: 1000, element: '|' }}>
+            <span className="intro-title">
+              hi, <span className="intro-name">hafeez</span> here.
+            </span>
+          </Typist>
+        </div>
         <FadeInSection>
           <div className="intro-subtitle">
             <span className="code-element">{"<"}</span>

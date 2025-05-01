@@ -32,7 +32,7 @@ class NavBar extends React.Component {
               <Nav.Link href="https://www.linkedin.com/in/hafeezhmha" target="_blank">
                 <LinkedInIcon style={{ fontSize: 21 }}></LinkedInIcon>
               </Nav.Link>
-              <Nav.Link href="https://hafeez.bearblog.dev/" target="_blank">
+              <Nav.Link href="https://hafeez.bearblog.dev/now/" target="_blank">
                 <BorderColorIcon style={{ fontSize: 20 }}></BorderColorIcon>
               </Nav.Link>
             </Nav>

@@ -5,10 +5,11 @@ import "../styles/NeuralViz.css";
 const Sketch = p5 => {
   let nodes = [];
   let connections = [];
-  const layers = [4, 6, 6, 4]; // Neural network architecture
-  const nodeRadius = 6;
+  let layers = [4, 6, 6, 4]; // Default neural network architecture
+  let nodeRadius = 6;
   const pulseSpeed = 0.02;
   let pulsePhase = 0;
+  let isMobile = false;
 
   class Node {
     constructor(x, y) {
@@ -35,19 +36,35 @@ const Sketch = p5 => {
 
     draw() {
       p5.stroke(230, 230, 250, this.activation * 100);
-      p5.strokeWeight(1);
+      p5.strokeWeight(isMobile ? 0.5 : 1);
       p5.line(this.start.x, this.start.y, this.end.x, this.end.y);
     }
   }
 
   p5.setup = () => {
     p5.createCanvas(p5.windowWidth, p5.windowHeight);
+    checkDevice();
     createNetwork();
   };
 
   p5.windowResized = () => {
     p5.resizeCanvas(p5.windowWidth, p5.windowHeight);
+    checkDevice();
     createNetwork();
+  };
+
+  const checkDevice = () => {
+    // Check if device is mobile
+    isMobile = p5.windowWidth < 768;
+    
+    // Adjust network architecture and node size based on screen size
+    if (isMobile) {
+      layers = [3, 4, 4, 3]; // Simpler architecture for mobile
+      nodeRadius = 4; // Smaller nodes for mobile
+    } else {
+      layers = [4, 6, 6, 4]; // Original architecture for desktop
+      nodeRadius = 6; // Original size for desktop
+    }
   };
 
   const createNetwork = () => {
@@ -70,10 +87,14 @@ const Sketch = p5 => {
     }
 
     // Create connections between layers
+    // For mobile, reduce the number of connections to improve performance
     for (let i = 0; i < nodes.length - 1; i++) {
       for (let node1 of nodes[i]) {
         for (let node2 of nodes[i + 1]) {
-          connections.push(new Connection(node1, node2));
+          // For mobile, add fewer connections by using a probability check
+          if (!isMobile || Math.random() > 0.3) {
+            connections.push(new Connection(node1, node2));
+          }
         }
       }
     }

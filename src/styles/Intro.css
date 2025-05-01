@@ -10,29 +10,59 @@
   position: relative;
 }
 
+.typist-wrapper {
+  width: 100%;
+  overflow: visible;
+  text-align: center;
+}
+
 .Typist {
   color: var(--lightest-slate);
   text-align: center;
   font-size: 70px;
   margin-top: -30px;
+  white-space: nowrap;
+  line-height: 1.2;
+  display: inline-block;
 }
+
+.Typist .Cursor {
+  display: inline-block;
+  margin-left: 5px;
+}
+
 .Typist .Cursor--blinking {
   color: var(--green-bright);
-  padding-left: 4px;
+  opacity: 1;
+  animation: blink 1s linear infinite;
+  font-weight: 100;
+  font-size: 80px;
+  line-height: 1;
+  position: relative;
+  top: -5px;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .intro-title {
   font-family: "NTR", sans-serif;
   font-size: 80px;
   letter-spacing: -1px;
+  display: inline;
+  white-space: nowrap;
 }
+
 .intro-name {
   font-family: "NTR", sans-serif;
   color: var(--green-bright);
   font-weight: bold;
   font-size: 80px;
   position: relative;
-  display: inline-block;
+  display: inline;
 }
 
 .intro-subtitle {
@@ -48,7 +78,7 @@
 .code-word {
   color: var(--slate);
   font-family: "NTR", sans-serif;
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 400;
   display: inline-block;
   transition: all 0.3s ease;
@@ -63,7 +93,7 @@
 .code-element {
   color: var(--green-bright);
   font-family: 'Courier New', monospace;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 300;
   opacity: 0.9;
   display: inline-block;
@@ -134,39 +164,50 @@ b {
   #intro {
     min-height: unset;
     padding-left: unset;
-    padding-top: unset;
-    margin: 0;
+    padding-top: 100px;
+    margin: 0 15px;
     align-items: center;
+  }
+
+  .typist-wrapper {
+    width: 100%;
+  }
+
+  .Typist {
+    margin-top: 0;
+    padding-top: 20px;
+    font-size: 36px;
+    white-space: nowrap;
   }
 
   .intro-title {
     font-size: 46px;
+    margin-top: 30px;
+    white-space: nowrap;
   }
+  
   .intro-name {
     font-size: 46px;
   }
 
-  .Typist {
-    font-size: 36px;
-  }
-
   .intro-subtitle {
-    margin: 0;
+    margin: 10px 0 0 0;
     font-size: 28px;
   }
 
   .code-word {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .code-element {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .intro-desc {
     font-size: 18px;
     max-width: unset;
     padding-bottom: 25px;
+    margin-top: 30px;
   }
 
   .intro-tagline {
@@ -184,5 +225,25 @@ b {
   
   .intro-tagline::after {
     right: -25px;
+  }
+
+  .Typist .Cursor--blinking {
+    font-size: 46px;
+    top: -3px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #intro {
+    padding-top: 120px;
+  }
+  
+  .intro-title {
+    font-size: 40px;
+    margin-top: 40px;
+  }
+  
+  .intro-name {
+    font-size: 40px;
   }
 }
