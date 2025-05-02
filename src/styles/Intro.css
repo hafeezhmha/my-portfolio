@@ -78,7 +78,7 @@
 .code-word {
   color: var(--slate);
   font-family: "NTR", sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 400;
   display: inline-block;
   transition: all 0.3s ease;
@@ -93,7 +93,7 @@
 .code-element {
   color: var(--green-bright);
   font-family: 'Courier New', monospace;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 300;
   opacity: 0.9;
   display: inline-block;
