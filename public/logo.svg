@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background with rounded corners -->
+  <rect width="192" height="192" rx="24" fill="#0a0a0a"/>
+  
+  <!-- Abstract H shape formed by neural network connections -->
+  <g id="neural-h">
+    <!-- Left vertical line of H -->
+    <circle cx="48" cy="48" r="10" fill="#e6e6fa" opacity="0.9"/>
+    <circle cx="48" cy="96" r="12" fill="#e6e6fa"/>
+    <circle cx="48" cy="144" r="10" fill="#e6e6fa" opacity="0.9"/>
+    <path d="M48 48 L48 144" stroke="#e6e6fa" stroke-width="6" opacity="0.6"/>
+    
+    <!-- Right vertical line of H -->
+    <circle cx="144" cy="48" r="10" fill="#e6e6fa" opacity="0.9"/>
+    <circle cx="144" cy="96" r="12" fill="#e6e6fa"/>
+    <circle cx="144" cy="144" r="10" fill="#e6e6fa" opacity="0.9"/>
+    <path d="M144 48 L144 144" stroke="#e6e6fa" stroke-width="6" opacity="0.6"/>
+    
+    <!-- Horizontal connector of H -->
+    <circle cx="96" cy="96" r="14" fill="#e6e6fa"/>
+    <path d="M48 96 L144 96" stroke="#e6e6fa" stroke-width="8"/>
+    
+    <!-- Additional neural connections -->
+    <circle cx="72" cy="72" r="8" fill="#e6e6fa" opacity="0.8"/>
+    <circle cx="120" cy="72" r="8" fill="#e6e6fa" opacity="0.8"/>
+    <circle cx="72" cy="120" r="8" fill="#e6e6fa" opacity="0.8"/>
+    <circle cx="120" cy="120" r="8" fill="#e6e6fa" opacity="0.8"/>
+    
+    <!-- Neural network connections -->
+    <path d="M48 48 L72 72" stroke="#e6e6fa" stroke-width="4" opacity="0.5"/>
+    <path d="M72 72 L96 96" stroke="#e6e6fa" stroke-width="4" opacity="0.5"/>
+    <path d="M96 96 L120 72" stroke="#e6e6fa" stroke-width="4" opacity="0.5"/>
+    <path d="M120 72 L144 48" stroke="#e6e6fa" stroke-width="4" opacity="0.5"/>
+    <path d="M48 144 L72 120" stroke="#e6e6fa" stroke-width="4" opacity="0.5"/>
+    <path d="M72 120 L96 96" stroke="#e6e6fa" stroke-width="4" opacity="0.5"/>
+    <path d="M96 96 L120 120" stroke="#e6e6fa" stroke-width="4" opacity="0.5"/>
+    <path d="M120 120 L144 144" stroke="#e6e6fa" stroke-width="4" opacity="0.5"/>
+    
+    <!-- Additional neural nodes for more complexity -->
+    <circle cx="36" cy="64" r="6" fill="#e6e6fa" opacity="0.6"/>
+    <circle cx="36" cy="128" r="6" fill="#e6e6fa" opacity="0.6"/>
+    <circle cx="156" cy="64" r="6" fill="#e6e6fa" opacity="0.6"/>
+    <circle cx="156" cy="128" r="6" fill="#e6e6fa" opacity="0.6"/>
+    <path d="M36 64 L48 48" stroke="#e6e6fa" stroke-width="3" opacity="0.4"/>
+    <path d="M36 128 L48 144" stroke="#e6e6fa" stroke-width="3" opacity="0.4"/>
+    <path d="M156 64 L144 48" stroke="#e6e6fa" stroke-width="3" opacity="0.4"/>
+    <path d="M156 128 L144 144" stroke="#e6e6fa" stroke-width="3" opacity="0.4"/>
+  </g>
+  
+  <!-- Tech circuit lines in background -->
+  <g id="circuit-bg" opacity="0.2">
+    <path d="M24 24 L40 24 L40 40" stroke="#e6e6fa" stroke-width="2" fill="none"/>
+    <path d="M168 24 L152 24 L152 40" stroke="#e6e6fa" stroke-width="2" fill="none"/>
+    <path d="M24 168 L40 168 L40 152" stroke="#e6e6fa" stroke-width="2" fill="none"/>
+    <path d="M168 168 L152 168 L152 152" stroke="#e6e6fa" stroke-width="2" fill="none"/>
+    <circle cx="24" cy="24" r="4" fill="#e6e6fa"/>
+    <circle cx="168" cy="24" r="4" fill="#e6e6fa"/>
+    <circle cx="24" cy="168" r="4" fill="#e6e6fa"/>
+    <circle cx="168" cy="168" r="4" fill="#e6e6fa"/>
+  </g>
+  
+  <!-- Pulse animation for the center node -->
+  <style>
+    @keyframes pulse {
+      0% { opacity: 0.8; r: 14; }
+      50% { opacity: 1; r: 16; }
+      100% { opacity: 0.8; r: 14; }
+    }
+    #neural-h circle:nth-child(7) {
+      animation: pulse 2s infinite ease-in-out;
+    }
+    
+    @keyframes glow {
+      0% { filter: drop-shadow(0 0 5px rgba(230, 230, 250, 0.3)); }
+      50% { filter: drop-shadow(0 0 15px rgba(230, 230, 250, 0.5)); }
+      100% { filter: drop-shadow(0 0 5px rgba(230, 230, 250, 0.3)); }
+    }
+    #neural-h {
+      animation: glow 4s infinite ease-in-out;
+    }
+  </style>
+</svg> 

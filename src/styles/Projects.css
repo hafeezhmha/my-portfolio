@@ -48,13 +48,44 @@
   justify-content: space-between;
   border-bottom: none !important;
 }
+
 .folder-icon {
   color: var(--green-bright);
+}
+
+.card-links {
+  display: flex;
+  align-items: center;
+}
+
+.repo-stars {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  background-color: rgba(179, 157, 219, 0.1);
+  padding: 3px 8px;
+  border-radius: 20px;
+  color: #b39ddb;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.repo-stars:hover {
+  background-color: rgba(179, 157, 219, 0.2);
+  transform: translateY(-2px);
+}
+
+.star-icon {
+  color: #b39ddb;
+  font-size: 18px !important;
+  margin-right: 4px;
 }
 
 .github-icon {
   margin-top: 6px;
 }
+
 .github-icon:hover {
   color: var(--green-bright);
 }
@@ -74,7 +105,29 @@
   font-family: "NTR", sans-serif;
   color: var(--slate);
   font-size: 18px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
+}
+
+.card-contribution {
+  font-family: "NTR", sans-serif;
+  color: var(--lightest-slate);
+  font-size: 16px;
+  padding: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  background: rgba(179, 157, 219, 0.07);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 3px solid #b39ddb;
+  line-height: 1.5;
+}
+
+.card-contribution strong {
+  color: #b39ddb;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 17px;
+  letter-spacing: 0.5px;
 }
 
 .card-tech {
@@ -138,6 +191,29 @@
   margin-bottom: 10px;
 }
 
+.carousel-caption p.contribution {
+  font-family: "NTR", sans-serif;
+  font-size: 16px;
+  color: var(--lightest-slate);
+  line-height: 1.5;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  background: rgba(179, 157, 219, 0.1);
+  border-left: 3px solid #b39ddb;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-caption p.contribution strong {
+  color: #b39ddb;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 .carousel-caption p.techStack {
   font-family: "NTR", sans-serif;
   font-size: 14px;
@@ -149,7 +225,7 @@
 }
 
 .carousel-indicators .active {
-  background-color: var(--green-bright);
+  background-color: #b39ddb;
 }
 
 @media only screen and (max-width: 600px) {

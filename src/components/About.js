@@ -25,6 +25,7 @@ class About extends React.Component {
         networks more intelligent and practical.
       </p>
     );
+    
     const two = (
       <p>
         What drives me is taking complex AI concepts and turning them into tangible solutions. 
@@ -32,6 +33,24 @@ class About extends React.Component {
         technologies can come together to create impactful solutions. You'll find me deep in 
         PyTorch code, experimenting with vision transformers, or architecting full-stack 
         applications that put AI to work.
+      </p>
+    );
+
+    const personal = (
+      <p className="personal-story">
+        My journey into AI began when I was fascinated by how machines could recognize patterns in images. 
+        This curiosity led me from traditional software development to the AI field, where I've found my true calling. 
+        Outside of coding, I enjoy walking in nature, playing chess, which helps me think through complex problems from new angles. 
+        I'm also fascinated about the notion of democratizing AI technology and making it accessible to solve real-world problems.
+      </p>
+    );
+
+    const goals = (
+      <p className="personal-goals">
+        <b>My goals:</b> I like building stuff and synthesizing two different fields of knowledge to create something new.
+        I'm working toward building systems that can understand visual content with human-like understanding 
+        while remaining computationally efficient. In the next few years, I hope to contribute to more open-source 
+        projects that make complex AI tools more accessible to developers worldwide.
       </p>
     );
 
@@ -72,6 +91,8 @@ class About extends React.Component {
             <div className="about-description">
               {[one]}
               {[two]}
+              {[personal]}
+              {[goals]}
               {"Here are some technologies I specialize in:"}
               <ul className="tech-stack">
                 {tech_stack.map(function (tech_item, i) {
