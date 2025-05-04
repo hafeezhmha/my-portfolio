@@ -13,13 +13,13 @@
 1. Install the dependencies
 
    ```sh
-   npm install or yarn
+   npm install --legacy-peer-deps
    ```
 
 2. Start the development server
 
    ```sh
-   yarn run start
+   npm start
    ```
 
 ## 🚀 build and run for production
