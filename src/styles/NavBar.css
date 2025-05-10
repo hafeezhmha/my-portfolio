@@ -21,6 +21,24 @@
     color: var(--green-bright) !important;
   }
 
+  .home-link {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    background-color: rgba(197, 163, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .home-link:hover {
+    background-color: rgba(197, 163, 255, 0.2);
+  }
+
+  .home-text {
+    margin-left: 5px;
+  }
+
   @media only screen and (max-width: 600px) {
     .navbar {
       padding: 8px 0;
@@ -33,4 +51,8 @@
     .navbar-light .navbar-nav.me-auto .nav-link {
         display: none;
       }
+
+    .home-link {
+      display: flex !important;
+    }
   }

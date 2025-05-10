@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Intro from "./components/Intro";
 import Experience from "./components/Experience";
 import About from "./components/About";
@@ -7,24 +8,34 @@ import Blog from "./components/Blog";
 import Now from "./components/Now";
 import Credits from "./components/Credits";
 import NavBar from "./components/NavBar";
+import Landing from "./components/Landing";
 import "./App.css";
 import "./styles/Global.css";
 import "rsuite/dist/styles/rsuite-default.css";
 
 function App() {
   return (
-    <div className="App">
-      <NavBar></NavBar>
-      <div id="content">
-        <Intro></Intro>
-        <About></About>
-        <Experience></Experience>
-        <Projects></Projects>
-        <Blog></Blog>
-        <Now></Now>
-        <Credits></Credits>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/">
+            <Landing />
+          </Route>
+          <Route path="/portfolio">
+            <NavBar></NavBar>
+            <div id="content">
+              <Intro></Intro>
+              <About></About>
+              <Experience></Experience>
+              <Projects></Projects>
+              <Blog></Blog>
+              <Now></Now>
+              <Credits></Credits>
+            </div>
+          </Route>
+        </Switch>
       </div>
-    </div>
+    </Router>
   );
 }
 

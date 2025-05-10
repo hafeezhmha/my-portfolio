@@ -6,6 +6,8 @@ import BorderColorIcon from "@material-ui/icons/BorderColor";
 import EmailRoundedIcon from "@material-ui/icons/EmailRounded";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import HomeIcon from "@material-ui/icons/Home";
+import { Link } from "react-router-dom";
 import "../styles/NavBar.css";
 
 class NavBar extends React.Component {
@@ -17,6 +19,10 @@ class NavBar extends React.Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
+              <Nav.Link as={Link} to="/" className="home-link">
+                <HomeIcon style={{ fontSize: 20 }}></HomeIcon>
+                <span className="home-text">Landing</span>
+              </Nav.Link>
               <Nav.Link href="#intro">Home</Nav.Link>
               <Nav.Link href="#about">About</Nav.Link>
               <Nav.Link href="#experience">Experience</Nav.Link>
