@@ -49,6 +49,18 @@
 .jss5 {
   background-color: var(--green-bright) !important;
 }
+
+/* Add more general selectors to target the tab indicator */
+.MuiTabs-indicator {
+  background-color: var(--green-bright) !important;
+}
+div[class*="PrivateTabIndicator"] {
+  background-color: var(--green-bright) !important;
+}
+div[class*="MuiTabs-indicator"] {
+  background-color: var(--green-bright) !important;
+}
+
 .makeStyles-tabs-2 {
   border-right: 1px solid var(--lightest-navy) !important;
 }
