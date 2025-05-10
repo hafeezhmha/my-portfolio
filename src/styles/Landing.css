@@ -230,7 +230,11 @@
   position: relative;
   display: inline-block;
   margin-top: 30px;
+  margin-bottom: 30px;
   padding: 8px 40px;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
 }
 
 .landing-tagline::before,
@@ -252,17 +256,23 @@
 }
 
 .landing-footer {
-  position: absolute;
-  bottom: 30px;
+  display: none;
+}
+
+.landing-social-links-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
-  z-index: 2;
+  margin-bottom: 40px;
 }
 
 .landing-social-links {
   display: flex;
   gap: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 25px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .landing-social-links a {
@@ -271,6 +281,8 @@
   font-size: 16px;
   transition: all 0.3s ease;
   position: relative;
+  padding: 5px 10px;
+  display: inline-block;
 }
 
 .landing-social-links a:hover {

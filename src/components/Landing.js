@@ -4,6 +4,7 @@ import Typist from "react-typist";
 import "react-typist/dist/Typist.css";
 import FadeInSection from "./FadeInSection";
 import LandingParticles from "./LandingParticles";
+import BackToTop from "./BackToTop";
 import "../styles/Landing.css";
 
 function Landing() {
@@ -116,7 +117,7 @@ function Landing() {
             
             <div className="landing-portal-container">
               <Link 
-                to="/portfolio" 
+                to="/" 
                 className="landing-portal"
                 onMouseEnter={() => handlePortalHover(true)}
                 onMouseLeave={() => handlePortalHover(false)}
@@ -142,38 +143,40 @@ function Landing() {
                 <span>Get in Touch</span>
               </a>
             </div>
-            
-            <div className="landing-tagline">
-              the future of ai is being built now
-            </div>
           </FadeInSection>
-        </div>
-        
-        <div className="landing-footer">
-          <div className="landing-social-links">
-            <a 
-              href="https://github.com/hafeezhmha" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              onMouseEnter={() => setCursorText("github")}
-              onMouseLeave={() => setCursorText("")}
-            >GitHub</a>
-            <a 
-              href="https://www.linkedin.com/in/hafeezhmha" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              onMouseEnter={() => setCursorText("linkedin")}
-              onMouseLeave={() => setCursorText("")}
-            >LinkedIn</a>
-            <a 
-              href="https://hafeez.bearblog.dev/now/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              onMouseEnter={() => setCursorText("blog")}
-              onMouseLeave={() => setCursorText("")}
-            >Blog</a>
+          
+          <div className="landing-tagline">
+            the future of ai is being built now
+          </div>
+          
+          <div className="landing-social-links-wrapper">
+            <div className="landing-social-links">
+              <a 
+                href="https://github.com/hafeezhmha" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onMouseEnter={() => setCursorText("github")}
+                onMouseLeave={() => setCursorText("")}
+              >GitHub</a>
+              <a 
+                href="https://www.linkedin.com/in/hafeezhmha" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onMouseEnter={() => setCursorText("linkedin")}
+                onMouseLeave={() => setCursorText("")}
+              >LinkedIn</a>
+              <a 
+                href="https://hafeez.bearblog.dev/now/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onMouseEnter={() => setCursorText("blog")}
+                onMouseLeave={() => setCursorText("")}
+              >Blog</a>
+            </div>
           </div>
         </div>
+        
+        <BackToTop />
       </div>
     </div>
   );

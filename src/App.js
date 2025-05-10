@@ -9,6 +9,7 @@ import Now from "./components/Now";
 import Credits from "./components/Credits";
 import NavBar from "./components/NavBar";
 import Landing from "./components/Landing";
+import BackToTop from "./components/BackToTop";
 import "./App.css";
 import "./styles/Global.css";
 import "rsuite/dist/styles/rsuite-default.css";
@@ -18,10 +19,10 @@ function App() {
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/">
+          <Route path="/welcome">
             <Landing />
           </Route>
-          <Route path="/portfolio">
+          <Route path="/">
             <NavBar></NavBar>
             <div id="content">
               <Intro></Intro>
@@ -31,6 +32,7 @@ function App() {
               <Blog></Blog>
               <Now></Now>
               <Credits></Credits>
+              <BackToTop />
             </div>
           </Route>
         </Switch>

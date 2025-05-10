@@ -19,9 +19,9 @@ class NavBar extends React.Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/" className="home-link">
+              <Nav.Link as={Link} to="/welcome" className="home-link">
                 <HomeIcon style={{ fontSize: 20 }}></HomeIcon>
-                <span className="home-text">Landing</span>
+                <span className="home-text">Welcome</span>
               </Nav.Link>
               <Nav.Link href="#intro">Home</Nav.Link>
               <Nav.Link href="#about">About</Nav.Link>
