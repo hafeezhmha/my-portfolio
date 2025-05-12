@@ -19,38 +19,37 @@ class About extends React.Component {
   render() {
     const one = (
       <p>
-        I am a <b>Machine Learning Engineer</b> focused on bringing{" "}
-        <button className="text-link">AI systems & Full Stack Applications</button> to life. I specialize in 
-        Computer Vision, Machine Learning, and Generative AI, working to make neural 
-        networks more intelligent and practical.
+        I am a <b>Machine Learning Engineer</b> specializing in{" "}
+        <button className="text-link">AI systems & Full Stack Applications</button>. My expertise spans 
+        Computer Vision, Machine Learning, and Generative AI, with a focus on making neural 
+        networks both intelligent and practical.
       </p>
     );
     
     const two = (
       <p>
-        What drives me is taking complex AI concepts and turning them into tangible solutions. 
-        My background in geospatial tech has given me a unique perspective on how different 
-        technologies can come together to create impactful solutions. You'll find me deep in 
-        PyTorch code, experimenting with vision transformers, or architecting full-stack 
-        applications that put AI to work.
+        I transform complex AI concepts into tangible solutions, drawing from my unique background 
+        in geospatial technology. Whether it's optimizing PyTorch models, experimenting with 
+        vision transformers, or building full-stack applications, I bring AI from theory to 
+        real-world impact.
       </p>
     );
 
     const personal = (
       <p className="personal-story">
-        My journey into AI began when I was fascinated by how machines could recognize patterns in images. 
-        This curiosity led me from traditional software development to the AI field, where I've found my true calling. 
-        Outside of coding, I enjoy walking in nature, playing chess, which helps me think through complex problems from new angles. 
-        I'm also fascinated about the notion of democratizing AI technology and making it accessible to solve real-world problems.
+        My fascination with pattern recognition in images sparked my journey from traditional 
+        software development to AI. Outside coding, I find inspiration in nature walks and chess, 
+        both helping me approach complex problems from fresh perspectives. I'm passionate about 
+        democratizing AI technology to solve meaningful real-world challenges.
       </p>
     );
 
     const goals = (
       <p className="personal-goals">
-        <b>My goals:</b> I like building stuff and synthesizing two different fields of knowledge to create something new.
-        I'm working toward building systems that can understand visual content with human-like understanding 
-        while remaining computationally efficient. In the next few years, I hope to contribute to more open-source 
-        projects that make complex AI tools more accessible to developers worldwide.
+        <b>My vision:</b> I thrive at the intersection of different knowledge domains, creating 
+        innovative solutions by combining disparate fields. I'm working toward building vision systems 
+        with human-like understanding while maintaining computational efficiency. My aim is to contribute 
+        to open-source projects that make powerful AI tools accessible to developers worldwide.
       </p>
     );
 
@@ -60,24 +59,14 @@ class About extends React.Component {
       "Computer Vision Models",
       "Large Language Models (LLMs)",
       "Version Control (Git)",
-      "HTML5",
-      "CSS3",
-      "JavaScript",
+      "HTML5/CSS3/JavaScript",
       "Tailwindcss",
-      "Anaconda",
-      "Groq",
-      "Langchain",
-      "Streamlit , Gradio",
-      "NumPy",
-      "Pandas",
-      "Diffusion Models (Flux, Wan 2.1)",
-      "OCR",
-      "QGIS",
+      "Langchain & Streamlit",
+      "NumPy & Pandas",
+      "Diffusion Models",
+      "OCR & QGIS",
       "Docker",
-      "ComfyUI",
-      "Replicate & Cog",
-      "AWS Lamdbda/S3",
-      "Lovable AI",
+      "AWS Services",
       "Hugging Face"
     ];
 

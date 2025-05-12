@@ -24,7 +24,7 @@
 
 .about-description li::before {
   content: "▹    ";
-  color: var(--green-bright);
+  color: #b39ddb;
   position: absolute;
   left: 0;
 }
@@ -44,24 +44,26 @@
 }
 
 .personal-story, .personal-goals {
-  border-left: 3px solid var(--green-bright);
+  border-left: 3px solid #b39ddb;
   padding-left: 15px;
   margin: 25px 0;
   font-size: 20px;
   line-height: 1.6;
-  background-color: rgba(100, 255, 218, 0.05);
+  background-color: rgba(179, 157, 219, 0.07);
   padding: 15px;
   border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .personal-goals {
-  background-color: rgba(100, 255, 218, 0.1);
+  background-color: rgba(179, 157, 219, 0.12);
 }
 
 .about-description a,
 .about-description b {
   font-size: 21px;
   font-weight: bold;
+  color: #b39ddb;
 }
 
 .text-link {
@@ -70,15 +72,16 @@
   padding: 0;
   font-size: 21px;
   font-weight: bold;
-  color: var(--green-bright);
+  color: #b39ddb;
   cursor: pointer;
   font-family: inherit;
   text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .text-link:hover {
   text-decoration: underline;
-  color: var(--green-bright);
+  color: #9575cd;
 }
 
 .about-image {

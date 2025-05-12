@@ -2,6 +2,8 @@ import React from "react";
 import "../styles/Projects.css";
 import FolderOpenRoundedIcon from "@material-ui/icons/FolderOpenRounded";
 import StarIcon from "@material-ui/icons/Star";
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LaunchIcon from '@material-ui/icons/Launch';
 import FadeInSection from "./FadeInSection";
 import ExternalLinks from "./ExternalLinks";
 import { Carousel } from "react-bootstrap";
@@ -12,13 +14,25 @@ class Projects extends React.Component {
     this.state = {
       expanded: true,
       activeKey: "1",
-      repoStats: {}
+      repoStats: {},
+      activeProject: 0,
+      isTransitioning: false
     };
     this.handleSelect = this.handleSelect.bind(this);
+    this.handleCarouselSelect = this.handleCarouselSelect.bind(this);
+    this.handleCardClick = this.handleCardClick.bind(this);
+    this.projectRefs = {};
   }
 
   componentDidMount() {
     this.fetchGitHubStats();
+    
+    // Preload all project images to avoid content flash
+    const projectsArray = Object.keys(this.getProjects());
+    projectsArray.forEach(key => {
+      const img = new Image();
+      img.src = this.getProjects()[key].image;
+    });
   }
 
   fetchGitHubStats() {
@@ -52,6 +66,41 @@ class Projects extends React.Component {
     });
   }
 
+  handleCarouselSelect(selectedIndex, e) {
+    // Update state for the active project
+    this.setState({
+      activeProject: selectedIndex,
+      isTransitioning: true
+    }, () => {
+      // Mark transition as complete after a brief delay
+      setTimeout(() => {
+        this.setState({ isTransitioning: false });
+      }, 500);
+      
+      // We'll disable auto-scrolling entirely when using the carousel controls
+      // This avoids the issues with null references
+      
+      // The Bootstrap Carousel onSelect passes the selectedIndex
+      // but does not always pass an event object
+      
+      // For safety, we'll completely avoid auto-scrolling
+      // Users can manually scroll to see the highlighted card if needed
+    });
+  }
+  
+  // Add a separate method for card clicks to avoid confusion with carousel controls
+  handleCardClick(index) {
+    // Set the active project in the carousel
+    this.setState({
+      activeProject: index,
+      isTransitioning: true
+    }, () => {
+      setTimeout(() => {
+        this.setState({ isTransitioning: false });
+      }, 500);
+    });
+  }
+
   getRepoStars(repoUrl) {
     // Only show stars for the AI Web Researcher project
     if (!repoUrl || repoUrl === "#") return null;
@@ -77,13 +126,13 @@ class Projects extends React.Component {
     return null;
   }
 
-  render() {
-    const projects = {
+  getProjects() {
+    return {
       "AI Web Researcher": {
         desc:
-          "A Windows-optimized research assistant that leverages locally-run LLMs through Ollama to conduct thorough, automated online research. It breaks down queries into focused areas, performs systematic web searching and scraping, compiles findings into documented research, and provides comprehensive summaries with source attribution.",
+          "A Windows-optimized research assistant that leverages locally-run LLMs through Ollama to conduct thorough, automated web research.",
         contribution: 
-          "Created a Windows-compatible version of the Linux assistant, improving performance and optimizing it for Windows systems. Architected and engineered the complete system from concept to deployment, focusing on optimizing LLM prompts and creating the research orchestration pipeline.",
+          "Created a Windows-compatible version, improving performance and optimizing the research orchestration pipeline.",
         techStack: "Python, Ollama, LangChain, BeautifulSoup, Windows Optimization",
         link: "https://github.com/hafeezhmha/Automated-AI-Web-Researcher-Ollama",
         open: "#",
@@ -91,9 +140,9 @@ class Projects extends React.Component {
       },
       "Aura": {
         desc:
-          "A multilingual real-time transliteration system supporting major Indic languages including Hindi, Kannada, Bengali, and more. Features real-time processing, user-friendly interface, and customization options for themes and configurations.",
+          "A multilingual real-time transliteration system supporting major Indic languages including Hindi, Kannada, Bengali, and more.",
         contribution:
-          "Developed the core NLP pipeline and designed the real-time processing algorithm that enables seamless transliteration across multiple languages.",
+          "Developed the core NLP pipeline and designed the real-time processing algorithm for seamless transliteration.",
         techStack: "Python, NLP, Machine Learning, Streamlit",
         link: "https://github.com/hafeezhmha/Aura",
         open: "https://aura-transliterate.streamlit.app/",
@@ -101,15 +150,20 @@ class Projects extends React.Component {
       },
       "Gradient Descent Visualization": {
         desc:
-          "An interactive visualization tool for understanding gradient descent algorithm. Features multiple function selections (Quadratic, Cubic, Sinusoidal, Exponential), real-time updates of values, and dynamic controls for learning rate and iterations.",
+          "An interactive visualization tool for understanding gradient descent algorithm with multiple function selections and real-time control parameters.",
         contribution:
-          "Built this educational tool to make complex optimization algorithms more intuitive, implementing the mathematical foundations and creating the interactive visualization interface.",
+          "Built this educational tool to make complex optimization algorithms more intuitive through interactive visualization.",
         techStack: "Python, Streamlit, Mathematical Visualization, Interactive Plotting",
         link: "#",
         open: "https://gradient-descent-visual.streamlit.app/",
         image: process.env.PUBLIC_URL + "/assets/gradient-descent-demo.png"
       }
     };
+  }
+
+  render() {
+    const projects = this.getProjects();
+    const projectsArray = Object.keys(projects);
 
     return (
       <div id="projects">
@@ -117,29 +171,56 @@ class Projects extends React.Component {
           <span className="section-title">/ projects</span>
         </div>
 
-        <Carousel className="project-carousel">
-          {Object.keys(projects).map((key, i) => (
-            <Carousel.Item key={i}>
-              <img
-                className="d-block w-100"
-                src={projects[key].image}
-                alt={key}
-              />
-              <Carousel.Caption>
-                <h3>{key}</h3>
-                <p>{projects[key].desc}</p>
-                <p className="contribution"><strong>My Contribution:</strong> {projects[key].contribution}</p>
-                <p className="techStack">{projects[key].techStack}</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          ))}
-        </Carousel>
+        <div className="carousel-wrapper">
+          <Carousel 
+            className="project-carousel" 
+            indicators={true} 
+            interval={null}
+            onSelect={this.handleCarouselSelect}
+            activeIndex={this.state.activeProject}
+            fade={true}
+          >
+            {projectsArray.map((key, i) => (
+              <Carousel.Item key={i}>
+                <img
+                  className="d-block w-100"
+                  src={projects[key].image}
+                  alt={key}
+                />
+                <Carousel.Caption className={this.state.isTransitioning ? 'transitioning' : ''}>
+                  <div className="caption-content">
+                    <h3>{key}</h3>
+                    <p>{projects[key].desc}</p>
+                    <p className="contribution"><strong>My Contribution:</strong> {projects[key].contribution}</p>
+                    <p className="techStack">{projects[key].techStack}</p>
+                    <div className="carousel-links">
+                      {projects[key].link !== "#" && (
+                        <a href={projects[key].link} target="_blank" rel="noopener noreferrer" className="project-link github">
+                          <GitHubIcon /> GitHub
+                        </a>
+                      )}
+                      {projects[key].open !== "#" && (
+                        <a href={projects[key].open} target="_blank" rel="noopener noreferrer" className="project-link demo">
+                          <LaunchIcon /> Live Demo
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
 
         <div className="project-container">
           <ul className="projects-grid">
-            {Object.keys(projects).map((key, i) => (
+            {projectsArray.map((key, i) => (
               <FadeInSection delay={`${i + 1}00ms`} key={i}>
-                <li className="projects-card">
+                <li 
+                  className={`projects-card ${this.state.activeProject === i ? 'active-project' : ''}`} 
+                  onClick={() => this.handleCardClick(i)}
+                  ref={el => this.projectRefs[i] = el}
+                >
                   <div className="card-header">
                     <div className="folder-icon">
                       <FolderOpenRoundedIcon
